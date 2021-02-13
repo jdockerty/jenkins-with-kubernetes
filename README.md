@@ -54,6 +54,7 @@ Jenkins is deployed using the Helm chart which includes the Kubernetes plugin. T
 
 We modify a few values in this file for the `minikube` setup.
 
+    serviceType: NodePort # Changed from ClusterIP with Minikube, this isn't specified in the Jenkins docs.
     nodePort: 32000 # Changed from being commented out.
     storageClass: jenkins-pv # The PV we created earlier.
     serviceAccount:
