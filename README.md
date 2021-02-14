@@ -12,9 +12,15 @@ This is a simple command list to execute in order to get the cluster running, us
     helm repo update
     helm install jenkins --namespace jenkins -f jenkins-values.yml jenkinsci/jenkins
     sleep 40 # Wait for the init containers to complete
-    kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
-    export NODE_PORT=$(kubectl get --namespace jenkins -o jsonpath="{.spec.ports[0].nodePort}" services jenkins)
-    export NODE_IP=$(kubectl get nodes --namespace jenkins -o jsonpath="{.items[0].status.addresses[0].address}")
+    kubectl exec --namespace jenkins \
+        -it svc/jenkins \
+        -c jenkins \
+        -- /bin/cat /run/secrets/chart-admin-password \
+        && echo
+    export NODE_PORT=$(kubectl get --namespace jenkins -o \
+        jsonpath="{.spec.ports[0].nodePort}" services jenkins)
+    export NODE_IP=$(kubectl get nodes --namespace jenkins -o \
+        jsonpath="{.items[0].status.addresses[0].address}")
     echo http://$NODE_IP:$NODE_PORT/login
 
 Take note of the initial Jenkins administrator password that is printed prior to logging in.
