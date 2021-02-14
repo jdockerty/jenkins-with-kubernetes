@@ -1,6 +1,5 @@
 # Jenkins with Kubernetes
 
-
 ## Quick Start
 
 This is a simple command list to execute in order to get the cluster running, useful if you do not care about the explanation or for myself when starting things back up again in a clean environment.
@@ -19,6 +18,8 @@ This is a simple command list to execute in order to get the cluster running, us
     echo http://$NODE_IP:$NODE_PORT/login
 
 Take note of the initial Jenkins administrator password that is printed prior to logging in.
+
+This is the installation process using Helm v3.
 
 ## Minikube
 
