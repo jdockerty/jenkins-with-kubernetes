@@ -1,5 +1,7 @@
 # Jenkins with Kubernetes
 
+This repository serves as an explanation for the various components of setting up Jenkins in a Kubernetes cluster, using minikube. Explanations are provided which may help others too.
+
 ## Quick Start
 
 This is a simple command list to execute in order to get the cluster running, useful if you do not care about the explanation or for myself when starting things back up again in a clean environment.
