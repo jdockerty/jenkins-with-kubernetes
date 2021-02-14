@@ -21,6 +21,10 @@ Take note of the initial Jenkins administrator password that is printed prior to
 
 This is the installation process using Helm v3.
 
+It's also possible to execute the following command, which allows for reaching Jenkins on `localhost:8080`
+
+    kubectl port-forward -n jenkins jenkins-0 8080
+
 ## Minikube
 
 * Install Minikube
